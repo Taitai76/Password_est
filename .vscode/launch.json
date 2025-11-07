@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Drogon (LLDB)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/password_est",
+      "args": [],
+      "cwd": "${workspaceFolder}",  
+      "MIMode": "lldb",
+      "stopAtEntry": false
+    }
+  ]
+}
