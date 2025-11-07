@@ -11,8 +11,11 @@ toggle.addEventListener('click', () => {
   toggle.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
 });
 
+// Use Netlify proxy in production, direct API when running locally
+const API_BASE = location.hostname.endsWith('netlify.app') ? '/_api' : '/api';
+
 btn.addEventListener('click', async () => {
-  const r = await fetch('/api/estimate', {
+  const r = await fetch(`${API_BASE}/estimate`, {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
     body: JSON.stringify({ password: pw.value })
